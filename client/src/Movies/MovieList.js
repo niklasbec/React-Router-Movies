@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom'
 const MovieList = props => {
   const [movies, setMovies] = useState([])
   useEffect(() => {
-    const id = props.match.params.id
     const getMovies = () => {
       axios
         .get('http://localhost:5000/api/movies')
@@ -31,7 +30,6 @@ const MovieList = props => {
 
 function MovieDetails({ movie }) {
   const { title, director, metascore, stars } = movie;
-  console.log(movie.id);
   return (
     
     <Link to={`/movies/${movie.id}`}>
